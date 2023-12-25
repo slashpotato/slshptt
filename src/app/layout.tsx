@@ -1,8 +1,9 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { Geologica } from 'next/font/google'
 import './globals.css'
+import Link from 'next/link'
 
-const inter = Inter({ subsets: ['latin'] })
+const geologica = Geologica({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -16,7 +17,17 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={geologica.className + ' mocha'}>
+        <main className='bg-ctp-base min-h-screen text-ctp-subtext0'>
+          <header className='h-max p-4 w-full'>
+            <div className='bg-ctp-mantle outline-ctp-lavender outline outline-2 w-full h-10 rounded-full flex justify-center items-center'>
+              <Link href={'/'} className='fixed text-ctp-subtext1'>slshptt</Link>
+            </div>
+          </header>
+
+          {children}
+        </main>
+      </body>
     </html>
   )
 }
